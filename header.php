@@ -18,10 +18,7 @@
     <link href="css/shop-item.css" rel="stylesheet">
     <link href="css/my.css" rel="stylesheet">
 
-
-        <!-- Google Fonts -->
-        <link href='https://fonts.googleapis.com/css?family=Passion+One' rel='stylesheet' type='text/css'>
-        <link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
+ <meta name="viewport" content="width=device-width, initial-scale=1"> 
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -29,6 +26,43 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+
+    <script type="text/javascript">
+        
+        function fetch()
+        {
+            var get = document.getElementById("get").value;
+            document.getElementById("put").value =get; 
+        }
+
+
+        $('#ex1').slider({
+    formatter: function(value) {
+        return 'Current value: ' + value;
+    }
+});
+
+// Without JQuery
+var slider = new Slider('#ex1', {
+    formatter: function(value) {
+        return 'Current value: ' + value;
+    }
+});
+
+$("#ex6").slider();
+$("#ex6").on("slide", function(slideEvt) {
+    $("#ex6SliderVal").text(slideEvt.value);
+});
+
+// Without JQuery
+var slider = new Slider("#ex6");
+slider.on("slide", function(slideEvt) {
+    $("#ex6SliderVal").text(slideEvt.value);
+});
+
+
+    </script>
+
 
 </head>
 

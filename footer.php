@@ -20,6 +20,12 @@
     <!-- /.container -->
 
     <!-- jQuery -->
+
+
+    <script type='text/javascript' src="dependencies/js/jquery.min.js"></script>
+    <script type='text/javascript' src="js/bootstrap-slider.js"></script>
+
+    
     <script src="js/jquery.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
