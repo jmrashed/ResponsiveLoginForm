@@ -1,68 +1,63 @@
- 
-<div class="form-group">
-    <label for="title" class="col-sm-2 control-label">Title<span class="star">*</span></label>
-    <div class="col-sm-6">
-        <div class="donate"> 
-                <label class="blue">
-                    <input type="radio" name="title" value="Mr" class="radio_button pointer" >
-                    <span class="white">Mr</span>
-                </label> 
-                <label class="blue">
-                    <input type="radio" name="title" value="Mrs" class="radio_button pointer" >
-                    <span class="white">Mrs</span>
-                </label> 
-                <label class="blue">
-                    <input type="radio" name="title" value="Ms" class="radio_button pointer" >
-                    <span class="white">Ms</span>
-                </label> 
-                <label class="blue">
-                    <input type="radio" name="title" value="Miss" class="radio_button pointer" >
-                    <span class="white">Miss</span>
-                </label> 
-        </div>
-<div class="form-group {{ $errors->has("first_name") ? "has-error":"" }}">
-    <label for="first_name" class="col-sm-2 control-label">First Name<span class="star">*</span></label>
-    <div class="col-sm-6">
-        <input type="text" name="first_name" class="form-control" id="first_name"
-               value="{{isset($adminUser) ? $adminUser->first_name : old("first_name") }}"
-               placeholder="">
-         
-    </div>
-</div>
-<div class="form-group {{ $errors->has("middle_name") ? "has-error":"" }}">
-    <label for="middle_name" class="col-sm-2 control-label">Middle Name</label>
-    <div class="col-sm-6">
-        <input type="text" name="middle_name" class="form-control" id="middle_name"
-               value="{{isset($adminUser) ? $adminUser->middle_name : old("middle_name") }}"
-               placeholder=""> 
-    </div>
-</div>
-<div class="form-group">
-    <label for="surname" class="col-sm-2 control-label">Surname<span class="star">*</span></label>
-    <div class="col-sm-6">
-        <input type="text" name="surname" class="form-control" id="surname" value=" "
-               placeholder=""> 
-    </div>
-</div>
-<
+<?php
+include("header.php");
+?>
+<h1 class="text-center page-header">User Home </h1>
 
-    <div class="form-group {{ $errors->has("password1") ? "has-error":"" }}">
-        <label for="password1" class="col-sm-2 control-label">Password 1
-            <span class="star">*</span>
-        </label>
-        <div class="col-sm-6">
-            <input type="password" name="password1" class="form-control" id="password1"
-                   placeholder="">
-            @if($errors->has('password1'))
-                <span class="help-block">
-                <strong>{{ $errors->first('password1') }}</strong>
-            </span>
-            @endif
+<form action="" method="" class="formd">
+
+    <div class="col-md-12">
+        <div class="stepwizard">
+            <div class="stepwizard-row setup-panel">
+                <div class="stepwizard-step">
+                    <a href="#step-1" type="button" class="btn btn-primary btn-circle">1</a>
+                    <p>Step 1</p>
+                </div>
+                <div class="stepwizard-step">
+                    <a href="#step-2" type="button" class="btn btn-default btn-circle" disabled="disabled">2</a>
+                    <p>Step 2</p>
+                </div>
+                <div class="stepwizard-step">
+                    <a href="#step-3" type="button" class="btn btn-default btn-circle" disabled="disabled">3</a>
+                    <p>Step 3</p>
+                </div>
+            </div>
+        </div>
+        <div class="row setup-content" id="step-1">
+            <div class="col-xs-12">
+                <div class="col-md-12">
+                    <h3> Personal Details</h3><hr>
+                    <?php include("secondpart.php"); ?>
+                    <button class="btn btn-primary nextBtn btn-lg pull-right" type="button">Next</button>
+
+                </div>
+                <br><br>
+            </div>
+        </div>
+        <div class="row setup-content" id="step-2">
+            <div class="col-xs-12">
+                <div class="col-md-12">
+                    <h3> Prefered Contact</h3>
+
+                    <?php include("thirdpart.php"); ?>
+                    <button class="btn btn-primary nextBtn btn-lg pull-right" type="button">Next</button>
+                </div>
+            </div>
+        </div>
+        <div class="row setup-content" id="step-3">
+            <div class="col-xs-12">
+                <div class="col-md-12">
+                    <?php include("fourpart.php"); ?>
+                    <button class="btn btn-success btn-lg pull-right" type="submit">Finish!</button>
+                    <br><br>
+                </div>
+            </div>
         </div>
     </div>
-    
-<div class="form-group">
-    <div class="col-sm-offset-2 col-sm-6">
-        <input type="submit" value="Sign Up" class="btn btn-success"> 
-    </div>
+</form>
+
 </div>
+<?php
+include("footer.php");
+?>
+ 
+ 
